@@ -1,5 +1,6 @@
 
 String htmlString() {
+  return 'html';
   String html =
       '<div class="tradingview-widget-container">'
       '<div id="tradingview_91dde"></div>'

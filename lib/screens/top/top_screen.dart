@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:test_job_slavit_ou/data/traders_data.dart';
+import 'package:test_job_slavit_ou/models/flag.dart';
+import 'package:test_job_slavit_ou/models/trader.dart';
 
 class TopScreen extends StatelessWidget {
   static const String id = 'top_screen';
@@ -63,27 +66,34 @@ class TableHeader extends StatelessWidget {
 }
 
 class TradersList extends StatelessWidget {
-  const TradersList({Key? key}) : super(key: key);
+  TradersData _tradersData = TradersData();
+  TradersList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        return TraderItem(trader: trader[index], index: index);
-      }
+    return Column(
+      children: [
+        for (Trader trader in _tradersData.traders)
+          TraderItem(trader),
+      ],
     );
   }
 }
 
 class TraderItem extends StatelessWidget {
-  final int index;
-  TraderItem({Key? key, required this.index}) : super(key: key);
+  final Trader trader;
+  TraderItem(this.trader);
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(index.toString()),
+        Text((trader.index + 1).toString()),
+        Flag.getFlag(trader.flagImagePath),
+        Text(trader.name),
+        Text(trader.deposit.toStringAsFixed(0)),
+        Text(trader.profit.toStringAsFixed(0)),
       ],
     );
   }

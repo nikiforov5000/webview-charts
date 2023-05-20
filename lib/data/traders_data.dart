@@ -1,8 +1,56 @@
+import 'dart:math';
+
 import 'package:test_job_slavit_ou/models/trader.dart';
 
-List<Trader> traders = [
-  Trader(index: index, name: getRandomName(), country: country, deposit: deposit, profit: profit),
-];
+class TradersData {
+  Random _random = Random();
+  List<Trader> _traders = [];
+
+  TradersData() {
+    fillList();
+  }
+
+  get traders => _traders;
+
+  void fillList() {
+    print('TradersData().fillList()');
+    for (int i = 1; i < 11; ++i)
+      _traders.add(
+        Trader(
+            index: i,
+            name: getRandomName(),
+            flagImagePath: getRandomFlagImage(),
+            deposit: getRandomDeposit(i),
+            profit: getRandomProfit(i),
+        )
+      );
+  }
+  double getRandomProfit(int i) {
+    i = (i - 10).abs();
+    double diff = _random.nextInt(500).toDouble();
+    double profit = i * 6666 + diff * 1 + _random.nextInt(10);
+    return profit;
+  }
+
+  double getRandomDeposit(int i) {
+    i = (i - 10).abs();
+    double diff = _random.nextInt(200).toDouble();
+    double deposit = i * 444 + diff;
+    return deposit;
+  }
+
+  String getRandomName() {
+    int rand = _random.nextInt(100);
+    return names[rand];
+  }
+
+  String getRandomFlagImage() {
+    int rand = _random.nextInt(260) + 1;
+    String path = 'assets/images/flags_nums/$rand.svg';
+    return path;
+  }
+
+}
 
 var names = [
   'James', 'Mary', 'Robert',	'Patricia',
@@ -56,4 +104,3 @@ var names = [
   'Bradley','Alexis', 'Philip','Lori',
   'Eugene','Marie', 'Noah','Joan',
 ];
-

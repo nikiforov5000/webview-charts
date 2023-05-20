@@ -1,6 +1,6 @@
 class Trader {
   final int index;
-  final String country;
+  final String flagImagePath;
   final String name;
   final double deposit;
   final double profit;
@@ -8,7 +8,7 @@ class Trader {
   Trader({
     required this.index,
     required this.name,
-    required this.country,
+    required this.flagImagePath,
     required this.deposit,
     required this.profit,
   });

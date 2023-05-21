@@ -3,7 +3,6 @@
 import 'package:test_job_slavit_ou/data/currency_pair.dart';
 
 class ChartData {
-  static CurrencyPair currencyPair = CurrencyPair.eurUsd;
 
   static final _map = {
     CurrencyPair.eurUsd: ['tradingview_91dde','FX:EURUSD'],
@@ -24,7 +23,8 @@ class ChartData {
     CurrencyPair.nzdJpy: ['tradingview_4e96f','OANDA:NZDJPY'],
   };
 
-  static String htmlString() {
+  static String htmlString(currencyPair) {
+
 
     String? id = _map[currencyPair]?[0];
     String? symbol = _map[currencyPair]?[1];

@@ -20,7 +20,6 @@ class _TradeScreenState extends State<TradeScreen> {
   @override
   Widget build(BuildContext context) {
     _controller..loadHtmlString(htmlString())
-      // ..loadFlutterAsset('assets/html/tradeingview.html')
       ..setJavaScriptMode(JavaScriptMode.unrestricted);
     return Scaffold(
       body: Center(

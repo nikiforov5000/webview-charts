@@ -12,9 +12,15 @@ class TradersData {
 
   get traders => _traders;
 
+  void updateNumbers() {
+    int index = _random.nextInt(10);
+    Trader trader = _traders[index];
+    trader.profit += _random.nextInt(100) + 50;
+    trader.deposit += _random.nextInt(100) + 50;
+  }
+
   void fillList() {
-    print('TradersData().fillList()');
-    for (int i = 1; i < 11; ++i)
+    for (int i = 1; i < 11; ++i) {
       _traders.add(
         Trader(
             index: i,
@@ -24,6 +30,7 @@ class TradersData {
             profit: getRandomProfit(i),
         )
       );
+    }
   }
   double getRandomProfit(int i) {
     i = (i - 10).abs();

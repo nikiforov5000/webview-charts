@@ -2,8 +2,8 @@ class Trader {
   final int index;
   final String flagImagePath;
   final String name;
-  final double deposit;
-  final double profit;
+  double deposit;
+  double profit;
 
   Trader({
     required this.index,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:test_job_slavit_ou/data/balance_provieder.dart';
 import 'package:test_job_slavit_ou/data/currency_provider.dart';
 import 'package:test_job_slavit_ou/data/currency_pair.dart';
+import 'package:test_job_slavit_ou/models/balance.dart';
 import 'package:test_job_slavit_ou/screens/top/top_screen.dart';
 import 'package:test_job_slavit_ou/screens/trade/trade_screen.dart';
 
@@ -22,8 +24,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    BalanceProvider balanceProvider = Provider.of<BalanceProvider>(context);
+    balanceProvider.balance = Balance(10000.0);
+
     CurrencyProvider currencyProvider = Provider.of<CurrencyProvider>(context);
     currencyProvider.currencyPair = CurrencyPair.eurUsd;
+
     return Scaffold(
       body: IndexedStack(
         index: currentIndex,

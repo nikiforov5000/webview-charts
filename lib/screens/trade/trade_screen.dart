@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_job_slavit_ou/data/chart_data.dart';
-import 'package:test_job_slavit_ou/data/currency_provider.dart';
-import 'package:test_job_slavit_ou/data/currency_pair.dart';
+import 'package:test_job_slavit_ou/data/balance_provieder.dart';
+import 'package:test_job_slavit_ou/models/balance.dart';
 import 'package:test_job_slavit_ou/screens/currency_pair/currency_pair_screen.dart';
 import 'package:test_job_slavit_ou/screens/trade/widgets/chart.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class TradeScreen extends StatefulWidget {
   static const String id = 'TradeScreen';
@@ -17,9 +15,6 @@ class TradeScreen extends StatefulWidget {
 }
 
 class _TradeScreenState extends State<TradeScreen> {
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,13 +22,9 @@ class _TradeScreenState extends State<TradeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('TradeScreen'),
-            TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, CurrencyPairScreen.id);
-              },
-              child: Text('go to CurrencyPair'),
-            ),
+            const TradeScreenTitle(),
+            ShowBalance(),
+            const CurrencyPairButton(),
             Chart(),
           ],
         ),
@@ -42,5 +33,60 @@ class _TradeScreenState extends State<TradeScreen> {
   }
 }
 
+class TradeScreenTitle extends StatelessWidget {
+  const TradeScreenTitle({Key? key}) : super(key: key);
 
+  @override
+  Widget build(BuildContext context) {
+    return const Text('TradeScreen');
+  }
+}
+
+class CurrencyPairButton extends StatelessWidget {
+  const CurrencyPairButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.pushNamed(context, CurrencyPairScreen.id);
+      },
+      child: const Text('go to CurrencyPair'),
+    );
+  }
+}
+
+
+class ShowBalance extends StatelessWidget {
+  const ShowBalance({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.grey,
+      child: Column(
+        children: [
+          Text('Balance'),
+          CurrentBalance(),
+        ],
+      ),
+    );
+  }
+}
+
+class CurrentBalance extends StatelessWidget {
+  const CurrentBalance({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final balanceProvider = Provider.of<BalanceProvider>(context);
+    return StreamBuilder<Balance>(
+      stream: balanceProvider.stream,
+        builder: (context, snapshot) {
+          double balance = snapshot.data!.balance;
+          return Text(balance.toStringAsFixed(0));
+        },
+    );
+  }
+}
 

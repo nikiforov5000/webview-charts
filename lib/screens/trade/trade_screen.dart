@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:test_job_slavit_ou/models/html_string.dart';
+import 'package:test_job_slavit_ou/data/chart_data.dart';
+import 'package:test_job_slavit_ou/data/currency_pair.dart';
 import 'package:test_job_slavit_ou/screens/currency_pair/currency_pair_screen.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-
-// Password DsAut9LmWUGZCC4
 
 class TradeScreen extends StatefulWidget {
   static const String id = 'TradeScreen';
@@ -19,7 +18,8 @@ class _TradeScreenState extends State<TradeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    _controller..loadHtmlString(htmlString())
+    _controller
+      ..loadHtmlString(ChartData.htmlString())
       ..setJavaScriptMode(JavaScriptMode.unrestricted);
     return Scaffold(
       body: Center(
@@ -35,8 +35,24 @@ class _TradeScreenState extends State<TradeScreen> {
             ),
             Container(
               child: Expanded(
-                child: WebViewWidget(
-                  controller: _controller,
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: TextButton(
+                        onPressed: () {
+                          setState(() {
+                            ChartData.currencyPair = CurrencyPair.gbpJpy;
+                          });
+                        },
+                        child: Text('change currency pair'),
+                      ),
+                    ),
+                    Expanded(
+                      child: WebViewWidget(
+                        controller: _controller,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             )

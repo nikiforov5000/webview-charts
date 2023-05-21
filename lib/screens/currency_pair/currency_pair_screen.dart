@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_job_slavit_ou/data/currencyProvider.dart';
+import 'package:test_job_slavit_ou/data/currency_provider.dart';
 import 'package:test_job_slavit_ou/data/currency_pair.dart';
 
 class CurrencyPairScreen extends StatelessWidget {

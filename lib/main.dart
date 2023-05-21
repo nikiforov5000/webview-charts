@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:test_job_slavit_ou/data/currency_provider.dart';
 import 'package:test_job_slavit_ou/screens/currency_pair/currency_pair_screen.dart';
 import 'package:test_job_slavit_ou/screens/home/home_screen.dart';
 import 'package:test_job_slavit_ou/screens/preloader/preloader_screen.dart';
@@ -14,17 +16,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      // initialRoute: PreloaderScreen.id,
-      initialRoute: PreloaderScreen.id,
-      routes: {
-        HomeScreen.id: (context) => HomeScreen(),
-        CurrencyPairScreen.id: (context) => CurrencyPairScreen(),
-        PreloaderScreen.id: (context) => PreloaderScreen(),
-        TopScreen.id: (context) => TopScreen(),
-        TradeScreen.id: (context) => TradeScreen(),
-      },
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => CurrencyProvider()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        // initialRoute: PreloaderScreen.id,
+        initialRoute: PreloaderScreen.id,
+        routes: {
+          HomeScreen.id: (context) => HomeScreen(),
+          CurrencyPairScreen.id: (context) => CurrencyPairScreen(),
+          PreloaderScreen.id: (context) => PreloaderScreen(),
+          TopScreen.id: (context) => TopScreen(),
+          TradeScreen.id: (context) => TradeScreen(),
+        },
+      ),
     );
   }
 }

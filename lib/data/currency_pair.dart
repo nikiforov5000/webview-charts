@@ -1,0 +1,18 @@
+enum CurrencyPair {
+  eurUsd,
+  gbpUsd,
+  usdJpy,
+  gbpJpy,
+  audUsd,
+  usdCad,
+  usdChf,
+  eurJpy,
+  nzdUsd,
+  audJpy,
+  eurAud,
+  cadJpy,
+  audCad,
+  gbpAud,
+  eurCad,
+  nzdJpy,
+}

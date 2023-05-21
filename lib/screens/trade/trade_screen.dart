@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:test_job_slavit_ou/models/html_string.dart';
+import 'package:provider/provider.dart';
+import 'package:test_job_slavit_ou/data/chart_data.dart';
+import 'package:test_job_slavit_ou/data/currency_provider.dart';
+import 'package:test_job_slavit_ou/data/currency_pair.dart';
 import 'package:test_job_slavit_ou/screens/currency_pair/currency_pair_screen.dart';
+import 'package:test_job_slavit_ou/screens/trade/widgets/chart.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-
-// Password DsAut9LmWUGZCC4
 
 class TradeScreen extends StatefulWidget {
   static const String id = 'TradeScreen';
@@ -15,12 +17,11 @@ class TradeScreen extends StatefulWidget {
 }
 
 class _TradeScreenState extends State<TradeScreen> {
-  WebViewController _controller = WebViewController();
+
+
 
   @override
   Widget build(BuildContext context) {
-    _controller..loadHtmlString(htmlString())
-      ..setJavaScriptMode(JavaScriptMode.unrestricted);
     return Scaffold(
       body: Center(
         child: Column(
@@ -33,16 +34,13 @@ class _TradeScreenState extends State<TradeScreen> {
               },
               child: Text('go to CurrencyPair'),
             ),
-            Container(
-              child: Expanded(
-                child: WebViewWidget(
-                  controller: _controller,
-                ),
-              ),
-            )
+            Chart(),
           ],
         ),
       ),
     );
   }
 }
+
+
+

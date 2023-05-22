@@ -4,6 +4,11 @@ import 'package:test_job_slavit_ou/data/balance_provieder.dart';
 import 'package:test_job_slavit_ou/models/balance.dart';
 import 'package:test_job_slavit_ou/screens/currency_pair/currency_pair_screen.dart';
 import 'package:test_job_slavit_ou/screens/trade/widgets/chart.dart';
+import 'package:test_job_slavit_ou/screens/trade/widgets/current_pair_button.dart';
+import 'package:test_job_slavit_ou/screens/trade/widgets/fake_timer.dart';
+import 'package:test_job_slavit_ou/screens/trade/widgets/investment_amount_selector.dart';
+import 'package:test_job_slavit_ou/screens/trade/widgets/show_balance.dart';
+import 'package:test_job_slavit_ou/screens/trade/widgets/trade_screen_title.dart';
 
 class TradeScreen extends StatefulWidget {
   static const String id = 'TradeScreen';
@@ -47,149 +52,22 @@ class BuySellButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     BalanceProvider balanceProvider = Provider.of<BalanceProvider>(context);
 
-    return ElevatedButton(
-      onPressed: () {
-        balanceProvider.buySell();
-      },
-      child: Text('Buy Sell'),
-    );
-  }
-}
-
-
-class InvestmentAmountSelector extends StatefulWidget {
-  const InvestmentAmountSelector({Key? key}) : super(key: key);
-
-  @override
-  State<InvestmentAmountSelector> createState() => _InvestmentAmountSelectorState();
-}
-
-class _InvestmentAmountSelectorState extends State<InvestmentAmountSelector> {
-
-    TextEditingController _controller = TextEditingController();
-
-  @override
-  Widget build(BuildContext context) {
-    BalanceProvider balanceProvider = Provider.of<BalanceProvider>(context);
-    _controller.text = balanceProvider.investment.toStringAsFixed(0);
-
-    return Expanded(
-
-      child: Container(
-        color: Colors.tealAccent,
-        child: Column(
-          children: [
-            Text('Investment'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      if (balanceProvider.investment >= 100) {
-                        balanceProvider.investment -= 100;
-                        _controller.text = balanceProvider.investment.toStringAsFixed(0);
-                        balanceProvider.currentInvestment = balanceProvider.investment;
-                      }
-                    });
-                  },
-                  child: Icon(Icons.remove),
-                ),
-                Expanded(
-                  child: TextField(
-                    textAlign: TextAlign.center,
-                    controller: _controller,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      if (balanceProvider.investment + 100 <= balanceProvider.balance.balance) {
-                        balanceProvider.investment += 100;
-                        _controller.text = balanceProvider.investment.toStringAsFixed(0);
-                        balanceProvider.currentInvestment = balanceProvider.investment;
-                      }
-                    });
-                  },
-                  child: Icon(Icons.add),
-                ),
-              ],
-            ),
-          ],
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        ElevatedButton(
+          onPressed: () {
+            balanceProvider.buySell();
+          },
+          child: Text('Buy Sell'),
         ),
-      ),
-    );
-  }
-}
-
-
-class TradeScreenTitle extends StatelessWidget {
-  const TradeScreenTitle({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Text('TradeScreen');
-  }
-}
-
-class CurrencyPairButton extends StatelessWidget {
-  const CurrencyPairButton({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.pushNamed(context, CurrencyPairScreen.id);
-      },
-      child: const Text('go to CurrencyPair'),
-    );
-  }
-}
-
-
-class ShowBalance extends StatelessWidget {
-  const ShowBalance({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.grey,
-      child: Column(
-        children: [
-          Text('Balance'),
-          CurrentBalance(),
-        ],
-      ),
-    );
-  }
-}
-
-class CurrentBalance extends StatelessWidget {
-  const CurrentBalance({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final balanceProvider = Provider.of<BalanceProvider>(context);
-    return StreamBuilder<Balance>(
-      stream: balanceProvider.stream,
-        builder: (context, snapshot) {
-          double balance = snapshot.data!.balance;
-          return Text(balance.toStringAsFixed(0));
-        },
-    );
-  }
-}
-
-class FakeTimer extends StatelessWidget {
-  const FakeTimer({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        color: Colors.purpleAccent,
-        child: Text('Timer'),
-      ),
+        ElevatedButton(
+          onPressed: () {
+            balanceProvider.buySell();
+          },
+          child: Text('Buy Sell'),
+        ),
+      ],
     );
   }
 }

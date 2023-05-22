@@ -24,14 +24,104 @@ class _TradeScreenState extends State<TradeScreen> {
           children: [
             const TradeScreenTitle(),
             ShowBalance(),
-            const CurrencyPairButton(),
             Chart(),
+            const CurrencyPairButton(),
+            Row(
+              children: [
+                FakeTimer(),
+                InvestmentAmountSelector(),
+              ],
+            ),
+            BuySellButtons(),
           ],
         ),
       ),
     );
   }
 }
+
+class BuySellButtons extends StatelessWidget {
+  const BuySellButtons({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    BalanceProvider balanceProvider = Provider.of<BalanceProvider>(context);
+
+    return ElevatedButton(
+      onPressed: () {
+        balanceProvider.buySell();
+      },
+      child: Text('Buy Sell'),
+    );
+  }
+}
+
+
+class InvestmentAmountSelector extends StatefulWidget {
+  const InvestmentAmountSelector({Key? key}) : super(key: key);
+
+  @override
+  State<InvestmentAmountSelector> createState() => _InvestmentAmountSelectorState();
+}
+
+class _InvestmentAmountSelectorState extends State<InvestmentAmountSelector> {
+
+    TextEditingController _controller = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    BalanceProvider balanceProvider = Provider.of<BalanceProvider>(context);
+    _controller.text = balanceProvider.investment.toStringAsFixed(0);
+
+    return Expanded(
+
+      child: Container(
+        color: Colors.tealAccent,
+        child: Column(
+          children: [
+            Text('Investment'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      if (balanceProvider.investment >= 100) {
+                        balanceProvider.investment -= 100;
+                        _controller.text = balanceProvider.investment.toStringAsFixed(0);
+                        balanceProvider.currentInvestment = balanceProvider.investment;
+                      }
+                    });
+                  },
+                  child: Icon(Icons.remove),
+                ),
+                Expanded(
+                  child: TextField(
+                    textAlign: TextAlign.center,
+                    controller: _controller,
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      if (balanceProvider.investment + 100 <= balanceProvider.balance.balance) {
+                        balanceProvider.investment += 100;
+                        _controller.text = balanceProvider.investment.toStringAsFixed(0);
+                        balanceProvider.currentInvestment = balanceProvider.investment;
+                      }
+                    });
+                  },
+                  child: Icon(Icons.add),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 
 class TradeScreenTitle extends StatelessWidget {
   const TradeScreenTitle({Key? key}) : super(key: key);
@@ -89,4 +179,19 @@ class CurrentBalance extends StatelessWidget {
     );
   }
 }
+
+class FakeTimer extends StatelessWidget {
+  const FakeTimer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        color: Colors.purpleAccent,
+        child: Text('Timer'),
+      ),
+    );
+  }
+}
+
 

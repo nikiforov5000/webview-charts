@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => CurrencyProvider()),
         ChangeNotifierProvider(create: (_) => BalanceProvider()),
+
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

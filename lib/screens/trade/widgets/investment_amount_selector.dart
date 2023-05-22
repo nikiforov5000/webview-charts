@@ -13,7 +13,7 @@ class InvestmentAmountSelector extends StatefulWidget {
 }
 
 class _InvestmentAmountSelectorState extends State<InvestmentAmountSelector> {
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

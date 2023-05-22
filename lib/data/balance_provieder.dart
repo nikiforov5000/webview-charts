@@ -17,7 +17,6 @@ class BalanceProvider extends ChangeNotifier {
 
   Balance get balance => _balance!;
 
-
   Stream<Balance> get stream => _balanceStreamController.stream;
 
   set currentInvestment(double currentInvestment) {
@@ -31,18 +30,18 @@ class BalanceProvider extends ChangeNotifier {
     _balanceStreamController.add(newBalance);
   }
 
-  void buySell() async {
+  void buySell() {
     if (_investment > _balance!.balance) {
       return;
     }
-    substructFromBalance();
-    await waitFewSec();
+    substractFromBalance();
+    // await waitFewSec();
     maybeReturnWithGain();
   }
-  substructFromBalance() {
+
+  substractFromBalance() {
     _balance?.balance -= _investment;
     _balanceStreamController.add(_balance!);
-
   }
 
   waitFewSec() async {
@@ -62,5 +61,4 @@ class BalanceProvider extends ChangeNotifier {
     _balanceStreamController.close();
     super.dispose();
   }
-
 }

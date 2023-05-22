@@ -4,15 +4,9 @@ import 'package:test_job_slavit_ou/data/balance_provieder.dart';
 import 'package:test_job_slavit_ou/screens/trade/widgets/change_investment_button.dart';
 import 'package:test_job_slavit_ou/screens/trade/widgets/investment_text_field.dart';
 
-class InvestmentAmountSelector extends StatefulWidget {
-  const InvestmentAmountSelector({Key? key}) : super(key: key);
+class InvestmentAmountSelector extends StatelessWidget {
+  InvestmentAmountSelector({Key? key}) : super(key: key);
 
-  @override
-  State<InvestmentAmountSelector> createState() =>
-      _InvestmentAmountSelectorState();
-}
-
-class _InvestmentAmountSelectorState extends State<InvestmentAmountSelector> {
   final TextEditingController _controller = TextEditingController();
 
   @override

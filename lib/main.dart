@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:test_job_slavit_ou/data/balance_provieder.dart';
 import 'package:test_job_slavit_ou/data/currency_provider.dart';
 import 'package:test_job_slavit_ou/screens/currency_pair/currency_pair_screen.dart';
 import 'package:test_job_slavit_ou/screens/home/home_screen.dart';
@@ -19,6 +20,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => CurrencyProvider()),
+        ChangeNotifierProvider(create: (_) => BalanceProvider()),
+
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

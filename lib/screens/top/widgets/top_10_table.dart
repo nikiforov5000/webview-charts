@@ -8,14 +8,14 @@ class Top10Table extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(7),
-        color: Colors.red
+        color: Colors.red,
       ),
       child: Column(
         children: [
-          TableHeader(),
+          const TableHeader(),
           TradersList(),
         ],
       ),

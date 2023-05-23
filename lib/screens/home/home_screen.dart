@@ -50,15 +50,15 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
-        Opacity(
-          opacity: 0.5,
-          child: Center(
-            child: Image(
-              image: AssetImage('assets/images/reference/Top.png'),
-              fit: BoxFit.fitWidth,
-            ),
-          ),
-        ),
+        // Opacity(
+        //   opacity: 0.5,
+        //   child: Center(
+        //     child: Image(
+        //       image: AssetImage('assets/images/reference/Top.png'),
+        //       fit: BoxFit.fitWidth,
+        //     ),
+        //   ),
+        // ),
       ],
     );
   }

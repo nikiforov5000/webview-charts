@@ -5,14 +5,17 @@ import 'package:test_job_slavit_ou/screens/top/widgets/top_screen_title.dart';
 class TopScreen extends StatelessWidget {
   static const String id = 'top_screen';
 
-  const TopScreen({Key? key}) : super(key: key);
+  TopScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final double height = MediaQuery.of(context).size.height;
+    return Scaffold(
       body: Column(
         children: [
+          SizedBox(height: height / 12.3,),
           TopScreenTitle(),
+          SizedBox(height: height / 28,),
           Top10Table(),
         ],
       ),

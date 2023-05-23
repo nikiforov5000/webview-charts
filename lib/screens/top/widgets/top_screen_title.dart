@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
 class TopScreenTitle extends StatelessWidget {
-  const TopScreenTitle({Key? key}) : super(key: key);
+  TopScreenTitle({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('TOP 10 Traders'),
+    return const Center(
+      child: Text(
+        'TOP 10 Traders',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 22,
+        ),
+      ),
     );
   }
 }

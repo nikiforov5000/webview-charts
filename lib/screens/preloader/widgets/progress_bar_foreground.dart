@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_job_slavit_ou/constants/colors.dart';
 
 class ProgressForeground extends StatelessWidget {
   final double height;
@@ -22,7 +23,7 @@ class ProgressForeground extends StatelessWidget {
               height: height,
               width: currentWidth,
               decoration: BoxDecoration(
-                  color: const Color(0xff35B972),
+                  color: kGreenColor,
                   borderRadius: BorderRadius.circular(99)),
             ),
           ],

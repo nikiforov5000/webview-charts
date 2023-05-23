@@ -30,9 +30,12 @@ class _TradersListState extends State<TradersList> {
   @override
   Widget build(BuildContext context) {
     initTimer();
+    int index = 0;
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
       children: [
-        for (Trader trader in _tradersData.traders) TraderItem(trader),
+        for (Trader trader in _tradersData.traders) TopTableRow(TraderItem(trader), index++),
       ],
     );
   }

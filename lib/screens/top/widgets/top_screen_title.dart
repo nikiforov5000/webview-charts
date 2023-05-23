@@ -5,8 +5,15 @@ class TopScreenTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('TOP 10 Traders'),
+    return const Center(
+      child: Text(
+        'TOP 10 Traders',
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+          fontSize: 22,
+        ),
+      ),
     );
   }
 }

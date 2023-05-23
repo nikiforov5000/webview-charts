@@ -67,7 +67,7 @@ flutter:
   assets:
     - assets/
     - assets/images/bg/bg.png
-    - assets/images/reference/Preloader.png
+    - assets/images/reference/
     - assets/images/flags_nums/
   #   - images/a_dot_ham.jpeg
 

@@ -7,11 +7,14 @@ class Top10Table extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const TableHeader(),
-        TradersList(),
-      ],
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 10),
+      child: const Column(
+        children: [
+          TableHeader(),
+          TradersList(),
+        ],
+      ),
     );
   }
 }

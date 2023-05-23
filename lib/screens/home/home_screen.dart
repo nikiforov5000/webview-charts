@@ -30,23 +30,36 @@ class _HomeScreenState extends State<HomeScreen> {
     CurrencyProvider currencyProvider = Provider.of<CurrencyProvider>(context);
     currencyProvider.currencyPair = CurrencyPair.eurUsd;
 
-    return Scaffold(
-      body: IndexedStack(
-        index: currentIndex,
-        children: screens,
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        iconSize: 50,
-        unselectedItemColor: Colors.grey.shade600,
-        selectedItemColor: Colors.green,
-        type: BottomNavigationBarType.fixed,
-        currentIndex: currentIndex,
-        onTap: (index) => setState(() => currentIndex = index),
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.add), label: 'top'),
-          BottomNavigationBarItem(icon: Icon(Icons.add), label: 'trade'),
-        ],
-      ),
+    return Stack(
+      children: [
+        Scaffold(
+          body: IndexedStack(
+            index: currentIndex,
+            children: screens,
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            iconSize: 50,
+            unselectedItemColor: Colors.grey.shade600,
+            selectedItemColor: Colors.green,
+            type: BottomNavigationBarType.fixed,
+            currentIndex: currentIndex,
+            onTap: (index) => setState(() => currentIndex = index),
+            items: [
+              BottomNavigationBarItem(icon: Icon(Icons.add), label: 'top'),
+              BottomNavigationBarItem(icon: Icon(Icons.add), label: 'trade'),
+            ],
+          ),
+        ),
+        Opacity(
+          opacity: 0.5,
+          child: Center(
+            child: Image(
+              image: AssetImage('assets/images/reference/Top.png'),
+              fit: BoxFit.fitWidth,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1081805387034",
+    "project_id": "test-job-slavit-ou",
+    "storage_bucket": "test-job-slavit-ou.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081805387034:android:4dae4b4ac4a4179104e8a3",
+        "android_client_info": {
+          "package_name": "com.example.test_job_slavit_ou"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1081805387034-emsnu48fu7vq37t59i1hb9ou2tfhkpi6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.test_job_slavit_ou",
+            "certificate_hash": "24af9d8ab98540ae1c7b92413dff97a0d4bbeab8"
+          }
+        },
+        {
+          "client_id": "1081805387034-ue6efgjspoaoogbg0c1hf6ub6bid48gb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4lQlPcQ3NOtqOitYEcSQf1IRlfwqWtkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1081805387034-ue6efgjspoaoogbg0c1hf6ub6bid48gb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -14,13 +14,16 @@ class TraderItem extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Expanded(
-          flex: 3,
+          flex: 6,
           child: TraderItemCellText((trader.index).toString()),
         ),
         Expanded(
-          flex: 12,
-          child: Flag.getFlag(trader.flagImagePath),
-        ),
+          flex: 10,
+          child: Row(children: [
+          Flag.getFlag(trader.flagImagePath),
+
+          ],
+        ),),
         Expanded(
           flex: 10,
           child: TraderItemCellText(trader.name),
@@ -37,7 +40,7 @@ class TraderItem extends StatelessWidget {
           ),
         ),
         Expanded(
-          flex: 14,
+          flex: 12,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [

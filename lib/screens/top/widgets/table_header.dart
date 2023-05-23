@@ -11,14 +11,14 @@ class TableHeader extends StatelessWidget {
       const Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Expanded(flex: 5, child: TableHeaderCellText('№')),
-          Expanded(flex: 9, child: TableHeaderCellText('Country')),
-          Expanded(flex: 11, child: TableHeaderCellText('Name')),
-          Expanded(flex: 10, child: TableHeaderCellText('Deposit')),
+          Expanded(flex: 4, child: TableHeaderCellText('№')),
+          Expanded(flex: 7, child: TableHeaderCellText('Country')),
+          Expanded(flex: 9, child: TableHeaderCellText('Name')),
+          Expanded(flex: 8, child: TableHeaderCellText('Deposit')),
           TableHeaderCellText('Profit'),
         ],
       ),
-      1,
+      -1,
     );
   }
 }

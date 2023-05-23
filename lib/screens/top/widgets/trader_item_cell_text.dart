@@ -15,6 +15,7 @@ class TraderItemCellText extends StatelessWidget {
     color ??= Colors.white;
     return Text(
       _text,
+      overflow: TextOverflow.fade,
       style: TextStyle(
         fontWeight: FontWeight.w600,
         color: color,

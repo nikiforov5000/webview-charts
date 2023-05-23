@@ -9,8 +9,8 @@ class TableHeaderCellText extends StatelessWidget {
     return Text(
       _text,
       style: const TextStyle(
-        fontSize: 13,
-        fontWeight: FontWeight.w600,
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
         color: Colors.white,
       ),
     );

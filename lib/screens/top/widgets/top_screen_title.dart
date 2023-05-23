@@ -9,6 +9,7 @@ class TopScreenTitle extends StatelessWidget {
       child: Text(
         'TOP 10 Traders',
         style: TextStyle(
+          color: Colors.white,
           fontWeight: FontWeight.bold,
           fontSize: 22,
         ),

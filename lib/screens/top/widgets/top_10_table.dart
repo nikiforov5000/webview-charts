@@ -9,13 +9,9 @@ class Top10Table extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(7),
-        color: Colors.red,
-      ),
-      child: Column(
+      child: const Column(
         children: [
-          const TableHeader(),
+          TableHeader(),
           TradersList(),
         ],
       ),

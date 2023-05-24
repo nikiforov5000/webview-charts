@@ -36,29 +36,28 @@ class _MyAppState extends State<MyApp> {
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       print('A new onMessage event was published');
       showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: Text('New Message'),
-            content: SingleChildScrollView(
-              child: ListBody(
-                children: [
-                  Text('Title: ${message.notification?.title}'),
-                  Text('Body: ${message.notification?.body}'),
-                ],
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('New Message'),
+              content: SingleChildScrollView(
+                child: ListBody(
+                  children: [
+                    Text('Title: ${message.notification?.title}'),
+                    Text('Body: ${message.notification?.body}'),
+                  ],
+                ),
               ),
-            ),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: Text('OK'),
-              ),
-            ],
-          );
-        }
-      );
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text('OK'),
+                ),
+              ],
+            );
+          });
     });
   }
 
@@ -68,12 +67,11 @@ class _MyAppState extends State<MyApp> {
       providers: [
         ChangeNotifierProvider(create: (_) => CurrencyProvider()),
         ChangeNotifierProvider(create: (_) => BalanceProvider()),
-
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        initialRoute: HomeScreen.id,
         // initialRoute: PreloaderScreen.id,
-        initialRoute: PreloaderScreen.id,
         routes: {
           HomeScreen.id: (context) => HomeScreen(),
           CurrencyPairScreen.id: (context) => CurrencyPairScreen(),

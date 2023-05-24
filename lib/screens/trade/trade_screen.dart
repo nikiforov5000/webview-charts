@@ -14,12 +14,16 @@ class TradeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Center(
+      body: Container(
+        color: Colors.red,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(height: height / 12,),
             const TradeScreenTitle(),
+            SizedBox(height: height / 70,),
             ShowBalance(),
             Chart(),
             const CurrencyPairButton(),

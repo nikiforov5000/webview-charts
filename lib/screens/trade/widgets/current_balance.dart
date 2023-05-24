@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:test_job_slavit_ou/constants/text_styles.dart';
 import 'package:test_job_slavit_ou/data/balance_provieder.dart';
 import 'package:test_job_slavit_ou/models/balance.dart';
 
@@ -16,7 +17,12 @@ class CurrentBalance extends StatelessWidget {
         if (snapshot.data != null) {
           balance = snapshot.data!.balance;
         }
-        return Text(balance.toStringAsFixed(0));
+        return Center(
+          child: Text(
+            balance.toStringAsFixed(0),
+            style: kSmallButtonTextStyle.copyWith(fontSize: 16),
+          ),
+        );
       },
     );
   }

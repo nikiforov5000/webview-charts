@@ -10,6 +10,11 @@ class CurrencyProvider extends ChangeNotifier {
 
   CurrencyPair get currencyPair => _currencyPair!;
 
+  @override
+  String toString() {
+    return _readablePair(currencyPair.name);
+  }
+
   Stream<CurrencyPair> get stream => _currencyPairStreamController.stream;
 
   set currencyPair(CurrencyPair curr) {
@@ -21,5 +26,11 @@ class CurrencyProvider extends ChangeNotifier {
   void dispose() {
     _currencyPairStreamController.close();
     super.dispose();
+  }
+
+  String _readablePair(String name) {
+    String leftCurrency = name.substring(0, 3).toUpperCase();
+    String rightCurrency = name.substring(3).toUpperCase();
+    return '$leftCurrency/$rightCurrency';
   }
 }

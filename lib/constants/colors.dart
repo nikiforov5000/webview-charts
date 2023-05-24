@@ -8,4 +8,6 @@ const kDarkBackgroundColor = Color(0xff1C1F2D);
 
 const kLightRowColor = Color(0xff2E303E);
 
+const kLightGreyButtons = Color(0xff333749);
+
   const kNavBarBackgroundColor = Color(0xff2E3241);

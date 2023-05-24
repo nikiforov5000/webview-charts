@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_job_slavit_ou/screens/trade/widgets/investment/change_investment_button.dart';
+import 'package:test_job_slavit_ou/screens/trade/widgets/plus_minus_icon.dart';
 
 class ChangeTime extends StatelessWidget {
   final String sign;

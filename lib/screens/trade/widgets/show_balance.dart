@@ -13,13 +13,13 @@ class ShowBalance extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(
+          const Center(
             child: Text(
               'Balance',
               style: kSmallButtonTextStyle,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Center(child: CurrentBalance()),

@@ -9,21 +9,20 @@ class TimeInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Expanded(
-        child: TextField(
-          decoration: InputDecoration(
-            constraints: BoxConstraints(maxHeight: 25),
-          ),
-          style: kBigButtonTextStyle,
-          textAlign: TextAlign.center,
-          controller: controller,
-          keyboardType: TextInputType.number,
-          inputFormatters: [
-            FilteringTextInputFormatter.digitsOnly,
-            LengthLimitingTextInputFormatter(2),
-            TimeInputFormatter(),
-          ],
-        )
+    return TextField(
+      decoration: const InputDecoration(
+        border: InputBorder.none,
+        constraints: BoxConstraints(maxHeight: 25),
+      ),
+      style: kBigButtonTextStyle,
+      textAlign: TextAlign.center,
+      controller: controller,
+      keyboardType: TextInputType.number,
+      inputFormatters: [
+        FilteringTextInputFormatter.digitsOnly,
+        LengthLimitingTextInputFormatter(2),
+        TimeInputFormatter(),
+      ],
     );
   }
 }

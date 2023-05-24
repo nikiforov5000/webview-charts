@@ -10,8 +10,8 @@ class CurrencyPairButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    CurrencyProvider _currencyProvider = Provider.of<CurrencyProvider>(context);
-    String currencyPairName = _currencyProvider.toString();
+    CurrencyProvider currencyProvider = Provider.of<CurrencyProvider>(context);
+    String currencyPairName = currencyProvider.toString();
 
     return Container(
       decoration: kRoundedConteinerDecoration,

@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:test_job_slavit_ou/constants/colors.dart';
 
 const kNavBarLabelTextStyle = TextStyle(
   fontSize: 10,
 );
 
 const kSmallButtonTextStyle = TextStyle(
-  color: Color(0xffC8C8C8),
+  color: kLightGreyTextColor,
   fontWeight: FontWeight.w400,
   fontSize: 12.5,
 );

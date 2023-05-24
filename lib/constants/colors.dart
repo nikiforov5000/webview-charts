@@ -17,3 +17,6 @@ const kNavBarBackgroundColor = Color(0xff2E3241);
 const kSellButtonColor = Color(0xffFE3D43);
 
 const kBuyButtonColor = Color(0xff35B972);
+
+const kLightGreyTextColor = Color(0xffC8C8C8);
+

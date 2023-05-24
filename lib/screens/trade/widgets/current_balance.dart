@@ -19,7 +19,10 @@ class CurrentBalance extends StatelessWidget {
         }
         return Text(
           balance.toStringAsFixed(0),
-          style: kSmallButtonTextStyle.copyWith(fontSize: 16),
+          style: kSmallButtonTextStyle.copyWith(
+            fontSize: 16,
+            color: Colors.white,
+          ),
         );
       },
     );

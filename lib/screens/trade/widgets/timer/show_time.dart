@@ -14,11 +14,12 @@ class ShowTime extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        TimeInput(minutesController),
-        Text(' : ', style: kBigButtonTextStyle,),
-        TimeInput(secondsController),
+        Expanded(child: TimeInput(minutesController)),
+        Text(':', style: kBigButtonTextStyle,),
+        Expanded(child: TimeInput(secondsController)),
       ],
     );
   }

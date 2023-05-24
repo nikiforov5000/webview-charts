@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_job_slavit_ou/constants/text_styles.dart';
 
 class InvestmentTextField extends StatefulWidget {
   final TextEditingController controller;
@@ -11,11 +12,10 @@ class InvestmentTextField extends StatefulWidget {
 class _InvestmentTextFieldState extends State<InvestmentTextField> {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: TextField(
-        textAlign: TextAlign.center,
-        controller: widget.controller,
-      ),
+    return TextField(
+      style: kBigButtonTextStyle,
+      textAlign: TextAlign.center,
+      controller: widget.controller,
     );
   }
 }

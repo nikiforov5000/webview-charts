@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:test_job_slavit_ou/constants/box_decorations.dart';
+import 'package:test_job_slavit_ou/constants/colors.dart';
+import 'package:test_job_slavit_ou/constants/text_styles.dart';
 import 'package:test_job_slavit_ou/data/balance_provieder.dart';
 
 class BuySellButtons extends StatelessWidget {
@@ -10,19 +13,39 @@ class BuySellButtons extends StatelessWidget {
     BalanceProvider balanceProvider = Provider.of<BalanceProvider>(context);
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        ElevatedButton(
-          onPressed: () {
-            balanceProvider.buySell();
-          },
-          child: Text('Buy Sell'),
+        Expanded(
+          child: Container(
+            decoration:
+                kRoundedConteinerDecoration.copyWith(color: kSellButtonColor),
+            child: GestureDetector(
+              onTap: () {
+                balanceProvider.buySell();
+              },
+              child: Center(
+                  child: Text(
+                'Buy Sell',
+                style: kBigButtonTextStyle,
+              )),
+            ),
+          ),
         ),
-        ElevatedButton(
-          onPressed: () {
-            balanceProvider.buySell();
-          },
-          child: Text('Buy Sell'),
+        Expanded(
+          child: Container(
+            decoration:
+                kRoundedConteinerDecoration.copyWith(color: kBuyButtonColor),
+            child: GestureDetector(
+              onTap: () {
+                balanceProvider.buySell();
+              },
+              child: Center(
+                  child: Text(
+                'Buy Sell',
+                style: kBigButtonTextStyle,
+              )),
+            ),
+          ),
         ),
       ],
     );

@@ -17,11 +17,9 @@ class CurrentBalance extends StatelessWidget {
         if (snapshot.data != null) {
           balance = snapshot.data!.balance;
         }
-        return Center(
-          child: Text(
-            balance.toStringAsFixed(0),
-            style: kSmallButtonTextStyle.copyWith(fontSize: 16),
-          ),
+        return Text(
+          balance.toStringAsFixed(0),
+          style: kSmallButtonTextStyle.copyWith(fontSize: 16),
         );
       },
     );

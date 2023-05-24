@@ -12,17 +12,11 @@ class RoundedContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 53,
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          child,
-        ],
-      ),
+      child: child,
     );
   }
 }

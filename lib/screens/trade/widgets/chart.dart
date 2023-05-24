@@ -22,10 +22,9 @@ class Chart extends StatelessWidget {
       stream: currencyProvider.stream,
       builder: (context, snapshot) {
         loadHtml(snapshot.data ?? CurrencyPair.eurJpy);
-        return Expanded(
-            child: WebViewWidget(
+        return WebViewWidget(
           controller: _controller,
-        ));
+        );
       },
     );
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_job_slavit_ou/common_widgets/rounded_container.dart';
-import 'package:test_job_slavit_ou/constants/colors.dart';
+import 'package:test_job_slavit_ou/constants/box_decorations.dart';
 import 'package:test_job_slavit_ou/constants/text_styles.dart';
 import 'package:test_job_slavit_ou/screens/trade/widgets/current_balance.dart';
 
@@ -9,10 +8,10 @@ class ShowBalance extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RoundedContainer(
-      color: kLightGreyButtons,
+    return Container(
+      decoration: kRoundedConteinerDecoration,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
             child: Text(
@@ -20,12 +19,12 @@ class ShowBalance extends StatelessWidget {
               style: kSmallButtonTextStyle,
             ),
           ),
-          SizedBox(height: 5,),
-          CurrentBalance(),
+          SizedBox(
+            height: 5,
+          ),
+          Center(child: CurrentBalance()),
         ],
       ),
     );
   }
 }
-
-

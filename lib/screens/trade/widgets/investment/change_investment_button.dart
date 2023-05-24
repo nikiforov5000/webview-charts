@@ -28,7 +28,18 @@ class ChangeInvestmentButton extends StatelessWidget {
           balanceProvider.currentInvestment = balanceProvider.investment;
         }
       },
-      child: Icon(sign == '-' ? Icons.remove : Icons.add),
+      child: PlusMinusIcon(sign),
     );
   }
 }
+
+class PlusMinusIcon extends StatelessWidget {
+  final String _sign;
+  const PlusMinusIcon(this._sign, {Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Icon(_sign == '-' ? Icons.remove : Icons.add, color: Colors.white,);
+  }
+}
+

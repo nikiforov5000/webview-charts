@@ -22,16 +22,13 @@ class InvestmentAmountSelector extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text('Investment', style: kSmallButtonTextStyle),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(child: ChangeInvestmentButton(sign: '-', controller: _controller)),
-                Expanded(child: InvestmentTextField(_controller)),
-                Expanded(child: ChangeInvestmentButton(sign: '+', controller: _controller)),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(child: ChangeInvestmentButton(sign: '-', controller: _controller)),
+              Expanded(child: InvestmentTextField(_controller)),
+              Expanded(child: ChangeInvestmentButton(sign: '+', controller: _controller)),
+            ],
           ),
         ],
       ),

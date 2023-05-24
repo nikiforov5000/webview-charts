@@ -4,7 +4,9 @@ const kGreenColor = Color(0xff35B972);
 
 const kGreyColor = Color(0xff787D8F);
 
-const kDarkBackgroundColor = Color(0xff1C1F2D);
+const kTopBackgroundColor = Color(0xff1C1F2D);
+
+const kTradeBackgroundColor = Color(0xff121629);
 
 const kLightRowColor = Color(0xff2E303E);
 

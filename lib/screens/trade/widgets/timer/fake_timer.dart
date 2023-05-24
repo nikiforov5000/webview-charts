@@ -27,27 +27,24 @@ class FakeTimer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text('Timer', style: kSmallButtonTextStyle,),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40),
-            child: Row(
-              children: [
-                Expanded(
-                  child: ChangeTime(
-                    sign: '-',
-                    minutesController: _minutesController,
-                    secondsController: _secondsController,
-                  ),
+          Row(
+            children: [
+              Expanded(
+                child: ChangeTime(
+                  sign: '-',
+                  minutesController: _minutesController,
+                  secondsController: _secondsController,
                 ),
-                Expanded(child: ShowTime(_secondsController, _minutesController)),
-                Expanded(
-                  child: ChangeTime(
-                    sign: '+',
-                    minutesController: _minutesController,
-                    secondsController: _secondsController,
-                  ),
+              ),
+              Expanded(child: ShowTime(_secondsController, _minutesController)),
+              Expanded(
+                child: ChangeTime(
+                  sign: '+',
+                  minutesController: _minutesController,
+                  secondsController: _secondsController,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),

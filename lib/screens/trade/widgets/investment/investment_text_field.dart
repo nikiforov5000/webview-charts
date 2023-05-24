@@ -13,6 +13,9 @@ class _InvestmentTextFieldState extends State<InvestmentTextField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      decoration: InputDecoration(
+        constraints: BoxConstraints(maxHeight: 25),
+      ),
       style: kBigButtonTextStyle,
       textAlign: TextAlign.center,
       controller: widget.controller,

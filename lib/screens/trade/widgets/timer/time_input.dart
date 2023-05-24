@@ -11,6 +11,9 @@ class TimeInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Expanded(
         child: TextField(
+          decoration: InputDecoration(
+            constraints: BoxConstraints(maxHeight: 25),
+          ),
           style: kBigButtonTextStyle,
           textAlign: TextAlign.center,
           controller: controller,

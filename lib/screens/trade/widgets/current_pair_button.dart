@@ -19,10 +19,7 @@ class CurrencyPairButton extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        // setState(() {
-          screenIndexProvider.index = 2;
-        // });
-        // Navigator.pushNamed(context, CurrencyPairScreen.id);
+        screenIndexProvider.index = 2;
       },
       child: StreamBuilder<CurrencyPair>(
         stream: currencyProvider.stream,
@@ -33,7 +30,7 @@ class CurrencyPairButton extends StatelessWidget {
             child: Center(
               child: Text(
                 /// TODO services/readable currency pair
-                snapshot.data.toString(),
+                currencyProvider.currencyPair.name,
                 style: kBigButtonTextStyle,
               ),
             ),

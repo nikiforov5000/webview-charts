@@ -24,7 +24,7 @@ class Chart extends StatelessWidget {
     return StreamBuilder<CurrencyPair>(
       stream: currencyProvider.stream,
       builder: (context, snapshot) {
-        loadHtml(snapshot.data!);
+        loadHtml(currencyProvider.currencyPair);
         return WebViewWidget(
           controller: _controller,
         );

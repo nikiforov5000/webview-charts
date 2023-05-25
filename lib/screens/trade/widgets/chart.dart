@@ -12,7 +12,7 @@ class Chart extends StatelessWidget {
 
   void loadHtml(CurrencyPair newCurrencyPair) {
     _controller
-      ..loadHtmlString(ChartData.htmlString(newCurrencyPair))
+      ..loadHtmlString(ChartData.getHtmlString(newCurrencyPair))
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setBackgroundColor(kTradeBackgroundColor)
     ;

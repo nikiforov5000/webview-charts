@@ -27,7 +27,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     BalanceProvider balanceProvider = Provider.of<BalanceProvider>(context);
-    balanceProvider.balance = Balance(10000.0);
 
     ScreenIndexProvider screenIndexProvider =
         Provider.of<ScreenIndexProvider>(context);

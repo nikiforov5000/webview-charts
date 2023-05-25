@@ -6,18 +6,21 @@ import 'package:flutter/material.dart';
 import 'package:test_job_slavit_ou/models/balance.dart';
 
 class BalanceProvider extends ChangeNotifier {
-  Balance? _balance;
+  double _balance = 10000;
   double _investment = 1000;
-  final _balanceStreamController = StreamController<Balance>.broadcast();
+  final _balanceStreamController = StreamController<double>.broadcast();
+  BalanceProvider() {
+    _balanceStreamController.add(10000);
+  }
 
   double get investment => _investment;
   set investment(double invest) {
     _investment = invest;
   }
 
-  Balance get balance => _balance!;
+  double get balance => _balance;
 
-  Stream<Balance> get stream => _balanceStreamController.stream;
+  Stream<double> get stream => _balanceStreamController.stream;
 
   set currentInvestment(double currentInvestment) {
     _investment = currentInvestment;
@@ -25,13 +28,13 @@ class BalanceProvider extends ChangeNotifier {
 
   double get currentInvestment => _investment;
 
-  set balance(Balance newBalance) {
+  set balance(double newBalance) {
     _balance = newBalance;
     _balanceStreamController.add(newBalance);
   }
 
   void buySell() {
-    if (_investment > _balance!.balance) {
+    if (_investment > _balance) {
       return;
     }
     substractFromBalance();
@@ -40,8 +43,8 @@ class BalanceProvider extends ChangeNotifier {
   }
 
   substractFromBalance() {
-    _balance?.balance -= _investment;
-    _balanceStreamController.add(_balance!);
+    _balance -= _investment;
+    _balanceStreamController.add(_balance);
   }
 
   waitFewSec() async {
@@ -51,8 +54,8 @@ class BalanceProvider extends ChangeNotifier {
   maybeReturnWithGain() {
     Random random = Random();
     if (random.nextBool()) {
-      _balance?.balance += _investment + _investment * 0.7;
-      _balanceStreamController.add(_balance!);
+      _balance += _investment + _investment * 0.7;
+      _balanceStreamController.add(_balance);
     }
   }
 

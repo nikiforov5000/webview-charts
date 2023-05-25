@@ -20,7 +20,7 @@ class ChangeInvestmentButton extends StatelessWidget {
       onTap: () {
         double currentInvestment = balanceProvider.investment;
         if (currentInvestment >= 100 &&
-            currentInvestment + 100 <= balanceProvider.balance.balance) {
+            currentInvestment + 100 <= balanceProvider.balance) {
           if (sign == '-') {
             balanceProvider.investment -= 100;
           } else {

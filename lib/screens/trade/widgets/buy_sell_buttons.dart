@@ -9,14 +9,17 @@ class BuySellButton extends StatelessWidget {
   final String label;
   const BuySellButton(this.label, {Key? key}) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
+    const snackBar = SnackBar(content: Text('Successfully'));
     BalanceProvider balanceProvider = Provider.of<BalanceProvider>(context);
     final Color color = label == 'Sell' ? kSellButtonColor : kBuyButtonColor;
     return Container(
       decoration: kRoundedConteinerDecoration.copyWith(color: color),
       child: GestureDetector(
         onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
           balanceProvider.buySell();
         },
         child: Center(

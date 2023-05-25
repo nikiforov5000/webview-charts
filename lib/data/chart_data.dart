@@ -20,41 +20,6 @@ class ChartData {
     CurrencyPair.nzdJpy: ['tradingview_4e96f', 'OANDA:NZDJPY'],
   };
 
-  // static String htmlString(currencyPair, double width, double height) {
-  //   String? id = _map[currencyPair]?[0];
-  //   String? symbol = _map[currencyPair]?[1];
-  //   String html =
-  //       '<!-- TradingView Widget BEGIN -->'
-  //       '<div class="tradingview-widget-container">'
-  //       '<div id="$id"></div>'
-  //       '<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>'
-  //       '<script type="text/javascript">'
-  //       'new TradingView.widget('
-  //       '{'
-  //       // '"autosize": true,' // either size OR
-  //       '"width": $width,' // exact sizes
-  //       '"height": $height,' // and here
-  //       '"symbol": "$symbol",'
-  //       '"interval": "D",'
-  //       '"timezone": "Etc/UTC",'
-  //       '"theme": "dark",'
-  //       '"style": "1",'
-  //       '"locale": "en",'
-  //       '"toolbar_bg": "#f1f3f6",'
-  //       '"enable_publishing": false,'
-  //       '"hide_top_toolbar": true,'
-  //       '"hide_legend": true,'
-  //       '"save_image": false,'
-  //       '"container_id": "$id"'
-  //       '}'
-  //       ');'
-  //       '</script>'
-  //       '</div>'
-  //       '<!-- TradingView Widget END -->'
-  //   ;
-  //   return html;
-  // }
-  //
   static String htmlString(currencyPair) {
     String? id = _map[currencyPair]?[0];
     String? symbol = _map[currencyPair]?[1];
@@ -66,9 +31,9 @@ class ChartData {
         '<script type="text/javascript">'
         'new TradingView.widget('
         '{'
-        // '"autosize": true,' // either size OR
-        '"width": 970,' // exact sizes
-        '"height": 820,' // and here
+        // '"autosize": true,'  // either auto OR
+        '"width": 970,'         // exact sizes
+        '"height": 820,'        // and here
         '"symbol": "$symbol",'
         '"interval": "D",'
         '"timezone": "Etc/UTC",'
@@ -89,29 +54,4 @@ class ChartData {
     ;
     return html;
   }
-  //
-//   static String miniWidgetHtmlString(currencyPair) {
-//     String? id = _map[currencyPair]?[0];
-//     String? symbol = _map[currencyPair]?[1];
-//     String html =
-//     '<!-- TradingView Widget BEGIN -->'
-//     '<div class="tradingview-widget-container">'
-//     '<div class="tradingview-widget-container__widget"></div>'
-//     '<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>'
-//     '{'
-//     '"autosize": true,'
-//     '"symbol": "$symbol",'
-//     '"locale": "en",'
-//     '"dateRange": "12M",'
-//     '"colorTheme": "dark",'
-//     '"isTransparent": true,'
-//     '"largeChartUrl": "",'
-//     '"noTimeScale": true,'
-//     '"chartOnly": true'
-//     '}'
-//     '</script>'
-//     '</div>'
-//     '<!-- TradingView Widget END -->';
-//     return html;
-//   }
 }

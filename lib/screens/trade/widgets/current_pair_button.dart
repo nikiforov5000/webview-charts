@@ -13,12 +13,12 @@ class CurrencyPairButton extends StatelessWidget {
     CurrencyProvider currencyProvider = Provider.of<CurrencyProvider>(context);
     String currencyPairName = currencyProvider.toString();
 
-    return Container(
-      decoration: kRoundedConteinerDecoration,
-      child: GestureDetector(
-        onTap: () {
-          Navigator.pushNamed(context, CurrencyPairScreen.id);
-        },
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, CurrencyPairScreen.id);
+      },
+      child: Container(
+        decoration: kRoundedConteinerDecoration,
         child: Center(
           child: Text(
             currencyPairName,

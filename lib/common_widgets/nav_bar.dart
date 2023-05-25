@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_job_slavit_ou/common_widgets/nav_bar_icons.dart';
@@ -9,6 +7,7 @@ import 'package:test_job_slavit_ou/providers/screen_index_provider.dart';
 
 class NavBar extends StatefulWidget {
   int currentIndex;
+
   NavBar(this.currentIndex, {Key? key}) : super(key: key);
 
   @override

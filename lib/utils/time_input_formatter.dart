@@ -9,7 +9,6 @@ class TimeInputFormatter extends TextInputFormatter {
     if (int.parse(newValue.text) > 59) {
       newFormattedText = oldValue.text;
     }
-    print('oldValue:${oldValue.text}, newValue:${newValue.text}');
 
     return TextEditingValue(
       text: newFormattedText,

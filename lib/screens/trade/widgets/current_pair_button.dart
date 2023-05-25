@@ -6,14 +6,9 @@ import 'package:test_job_slavit_ou/data/currency_pair.dart';
 import 'package:test_job_slavit_ou/providers/currency_provider.dart';
 import 'package:test_job_slavit_ou/providers/screen_index_provider.dart';
 
-class CurrencyPairButton extends StatefulWidget {
+class CurrencyPairButton extends StatelessWidget {
   const CurrencyPairButton({Key? key}) : super(key: key);
 
-  @override
-  State<CurrencyPairButton> createState() => _CurrencyPairButtonState();
-}
-
-class _CurrencyPairButtonState extends State<CurrencyPairButton> {
   @override
   Widget build(BuildContext context) {
     final currencyProvider = Provider.of<CurrencyProvider>(context);
@@ -21,20 +16,17 @@ class _CurrencyPairButtonState extends State<CurrencyPairButton> {
 
     return GestureDetector(
       onTap: () {
-        setState(() {
-          screenIndexProvider.index = 2;
-        });
-        // Navigator.pushNamed(context, CurrencyPairScreen.id);
+        screenIndexProvider.index = 2;
       },
       child: StreamBuilder<CurrencyPair>(
         stream: currencyProvider.stream,
         builder: (BuildContext context, snapshot) {
-          String currencyPairName = currencyProvider.toString();
           return Container(
             decoration: kRoundedConteinerDecoration,
             child: Center(
               child: Text(
-                currencyPairName,
+                /// TODO services/readable currency pair
+                currencyProvider.currencyPair.toString(),
                 style: kBigButtonTextStyle,
               ),
             ),

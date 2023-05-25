@@ -23,10 +23,10 @@ class ChartData {
   static String htmlString(currencyPair) {
     String? id = _map[currencyPair]?[0];
     String? symbol = _map[currencyPair]?[1];
-    String html = '<div class="tradingview-widget-container">'
+    String html =
+        '<!-- TradingView Widget BEGIN -->'
+        '<div class="tradingview-widget-container">'
         '<div id="$id"></div>'
-        '<div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/"'
-        'rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>'
         '<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>'
         '<script type="text/javascript">'
         'new TradingView.widget('
@@ -43,11 +43,37 @@ class ChartData {
         '"hide_top_toolbar": true,'
         '"hide_legend": true,'
         '"save_image": false,'
-        '"container_id": "tradingview_b368b"'
+        '"container_id": "$id"'
         '}'
         ');'
         '</script>'
-        '</div>';
+        '</div>'
+        '<!-- TradingView Widget END -->'
+    ;
+    return html;
+  }
+  static String miniWidgetHtmlString(currencyPair) {
+    String? id = _map[currencyPair]?[0];
+    String? symbol = _map[currencyPair]?[1];
+    String html =
+    '<!-- TradingView Widget BEGIN -->'
+    '<div class="tradingview-widget-container">'
+    '<div class="tradingview-widget-container__widget"></div>'
+    '<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>'
+    '{'
+    '"autosize": true,'
+    '"symbol": "$symbol",'
+    '"locale": "en",'
+    '"dateRange": "12M",'
+    '"colorTheme": "dark",'
+    '"isTransparent": true,'
+    '"largeChartUrl": "",'
+    '"noTimeScale": true,'
+    '"chartOnly": true'
+    '}'
+    '</script>'
+    '</div>'
+    '<!-- TradingView Widget END -->';
     return html;
   }
 }

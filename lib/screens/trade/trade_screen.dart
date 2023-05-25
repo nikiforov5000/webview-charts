@@ -18,25 +18,28 @@ class TradeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     double spacer = height / 100;
+    double buttonHeight = height / 15;
     return Scaffold(
       body: Container(
+        height:  height,
         padding: EdgeInsets.only(left: 25, right: 25, top: 50, bottom: 10),
         color: kTradeBackgroundColor,
         child: Column(
           children: [
             SizedBox(height: spacer,),
             SizedBox(height: spacer,),
-            const TradeScreenTitle(),
+            SizedBox(height: buttonHeight,child: const TradeScreenTitle()),
             SizedBox(height: spacer,),
-            Expanded(child: ShowBalance()),
-            SizedBox(height: spacer,),
-            SizedBox(height: spacer,),
-            Expanded(flex: 6,child: Chart()),
+            SizedBox(height: buttonHeight,child: ShowBalance()),
             SizedBox(height: spacer,),
             SizedBox(height: spacer,),
-            Expanded(child: const CurrencyPairButton()),
+            SizedBox(height: buttonHeight * 5.5,child: Chart()),
             SizedBox(height: spacer,),
-            Expanded(
+            SizedBox(height: spacer,),
+            SizedBox(height: buttonHeight,child: const CurrencyPairButton()),
+            SizedBox(height: spacer,),
+            SizedBox(
+              height: buttonHeight,
               child: Row(
                 children: [
                   Expanded(child: FakeTimer()),
@@ -46,7 +49,8 @@ class TradeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: spacer,),
-            Expanded(
+            SizedBox(
+              height: buttonHeight,
               child: Row(
                 children: [
                   Expanded(child: BuySellButton('Sell')),

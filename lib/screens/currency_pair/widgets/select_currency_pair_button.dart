@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_job_slavit_ou/constants/box_decorations.dart';
 import 'package:test_job_slavit_ou/constants/colors.dart';
 import 'package:test_job_slavit_ou/constants/text_styles.dart';
-import 'package:test_job_slavit_ou/data/currency_pair.dart';
+import 'package:test_job_slavit_ou/models/currency_pair.dart';
 import 'package:test_job_slavit_ou/providers/currency_provider.dart';
 
 class SelectCurrencyPairButton extends StatelessWidget {
@@ -33,7 +33,7 @@ class SelectCurrencyPairButton extends StatelessWidget {
           ),
           child: Center(
             child: Text(
-              _readable(_currencyPair.name),
+              readable(_currencyPair),
               style: kBigButtonTextStyle.copyWith(
                 fontSize: 13.5,
                 fontWeight: FontWeight.w600,
@@ -45,8 +45,4 @@ class SelectCurrencyPairButton extends StatelessWidget {
     );
   }
 
-  String _readable(String name) {
-    /// TODO replace with services/readableCurrencyPair
-    return '${name.toUpperCase().substring(0, 3)} / ${name.toUpperCase().substring(3)}';
-  }
 }

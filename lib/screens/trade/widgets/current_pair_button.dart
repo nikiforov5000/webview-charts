@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_job_slavit_ou/constants/box_decorations.dart';
 import 'package:test_job_slavit_ou/constants/text_styles.dart';
-import 'package:test_job_slavit_ou/data/currency_pair.dart';
+import 'package:test_job_slavit_ou/models/currency_pair.dart';
 import 'package:test_job_slavit_ou/providers/currency_provider.dart';
 import 'package:test_job_slavit_ou/providers/screen_index_provider.dart';
 
@@ -25,8 +25,7 @@ class CurrencyPairButton extends StatelessWidget {
             decoration: kRoundedConteinerDecoration,
             child: Center(
               child: Text(
-                /// TODO services/readable currency pair
-                currencyProvider.currencyPair.toString(),
+                readable(currencyProvider.currencyPair),
                 style: kBigButtonTextStyle,
               ),
             ),

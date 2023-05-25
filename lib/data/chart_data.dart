@@ -1,4 +1,4 @@
-import 'package:test_job_slavit_ou/data/currency_pair.dart';
+import 'package:test_job_slavit_ou/models/currency_pair.dart';
 
 class ChartData {
   static final _map = {

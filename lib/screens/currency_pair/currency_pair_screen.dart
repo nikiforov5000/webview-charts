@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_job_slavit_ou/data/currency_pair.dart';
+import 'package:test_job_slavit_ou/models/currency_pair.dart';
 import 'package:test_job_slavit_ou/providers/currency_provider.dart';
 import 'package:test_job_slavit_ou/screens/currency_pair/widgets/currency_pair_list.dart';
 

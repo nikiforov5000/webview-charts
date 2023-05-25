@@ -5,6 +5,7 @@ import 'package:test_job_slavit_ou/constants/colors.dart';
 import 'package:test_job_slavit_ou/constants/text_styles.dart';
 import 'package:test_job_slavit_ou/data/currency_pair.dart';
 import 'package:test_job_slavit_ou/data/currency_provider.dart';
+import 'package:test_job_slavit_ou/providers/screen_index_provider.dart';
 
 class CurrencyPairScreen extends StatelessWidget {
   static const String id = 'currency_pair_screen';
@@ -128,14 +129,43 @@ class CurrencyPairScreenTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      'Currency pair',
-      textAlign: TextAlign.center,
-      style: TextStyle(
-        color: Colors.white,
-        fontWeight: FontWeight.bold,
-        fontSize: 22,
-      ),
+    final screenIndexProvider = Provider.of<ScreenIndexProvider>(context);
+    return Stack(
+      children: [
+            GestureDetector(
+              onTap: () {
+                screenIndexProvider.index = 0;
+              },
+              child: BackArrowIcon(),
+            ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Currency pair',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 22,
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
+
+class BackArrowIcon extends StatelessWidget {
+  const BackArrowIcon({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 30),
+      child: Icon(Icons.arrow_back_ios, color: Colors.white,),
+    );
+  }
+}
+

@@ -20,7 +20,7 @@ class ChartData {
     CurrencyPair.nzdJpy: ['tradingview_4e96f', 'OANDA:NZDJPY'],
   };
 
-  static String htmlString(currencyPair) {
+  static String getHtmlString(currencyPair) {
     String? id = _map[currencyPair]?[0];
     String? symbol = _map[currencyPair]?[1];
     String html =

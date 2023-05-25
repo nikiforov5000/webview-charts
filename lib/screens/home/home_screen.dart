@@ -5,6 +5,7 @@ import 'package:test_job_slavit_ou/data/balance_provieder.dart';
 import 'package:test_job_slavit_ou/data/currency_pair.dart';
 import 'package:test_job_slavit_ou/data/currency_provider.dart';
 import 'package:test_job_slavit_ou/models/balance.dart';
+import 'package:test_job_slavit_ou/screens/currency_pair/currency_pair_screen.dart';
 import 'package:test_job_slavit_ou/screens/top/top_screen.dart';
 import 'package:test_job_slavit_ou/screens/trade/trade_screen.dart';
 
@@ -19,6 +20,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final screens = <Widget>[
+    CurrencyPairScreen(),
     TradeScreen(),
     TopScreen(),
   ];
@@ -45,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
         //   opacity: 0.5,
         //   child: Center(
         //     child: Image(
-        //       image: AssetImage('assets/images/reference/Trade.png'),
+        //       image: AssetImage('assets/images/reference/Choose pair.png'),
         //       fit: BoxFit.fitWidth,
         //     ),
         //   ),

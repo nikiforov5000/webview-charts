@@ -33,7 +33,7 @@ class ChartData {
         '{'
         // '"autosize": true,'  // either auto OR
         '"width": 970,'         // exact sizes
-        '"height": 820,'        // and here
+        '"height": 900,'        // and here
         '"symbol": "$symbol",'
         '"interval": "D",'
         '"timezone": "Etc/UTC",'

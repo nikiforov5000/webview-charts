@@ -13,18 +13,20 @@ class NavBarIcons {
   static final trade = makeNavBarItem(tradeIconPath, 'Trade');
   static final top = makeNavBarItem(topIconPath, 'Top');
 
+
   static makeNavBarItem(String path, String label) {
+    final bottomPadding = EdgeInsets.only(bottom: 3);
     return BottomNavigationBarItem(
       label: label,
       icon: Padding(
-        padding: const EdgeInsets.only(bottom: 5),
+        padding:bottomPadding,
         child: SvgPicture.asset(
           path,
           colorFilter: inactiveColorFilter,
         ),
       ),
       activeIcon: Padding(
-        padding: const EdgeInsets.only(bottom: 5),
+        padding:bottomPadding,
         child: SvgPicture.asset(
           path,
           colorFilter: activeColorFilter,

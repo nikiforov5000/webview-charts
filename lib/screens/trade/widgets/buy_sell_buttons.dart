@@ -20,10 +20,14 @@ class BuySellButton extends StatelessWidget {
           balanceProvider.buySell();
         },
         child: Center(
-            child: Text(
-          label,
-          style: kBigButtonTextStyle,
-        )),
+          child: Text(
+            label,
+            style: kBigButtonTextStyle.copyWith(
+              fontSize: 24,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        ),
       ),
     );
   }

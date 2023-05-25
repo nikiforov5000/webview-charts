@@ -15,8 +15,9 @@ class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 90,
       color: kNavBarBackgroundColor,
-      padding: const EdgeInsets.only(left: 23, right: 23, bottom: 33, top: 10),
+      padding: const EdgeInsets.only(left: 23, right: 23, bottom: 33, top: 3),
       child: BottomNavigationBar(
         elevation: 0,
         iconSize: 50,

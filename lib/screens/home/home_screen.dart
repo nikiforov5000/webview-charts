@@ -43,15 +43,15 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           bottomNavigationBar: NavBar(currentIndex),
         ),
-        // Opacity(
-        //   opacity: 0.5,
-        //   child: Center(
-        //     child: Image(
-        //       image: AssetImage('assets/images/reference/Choose pair.png'),
-        //       fit: BoxFit.fitWidth,
-        //     ),
-        //   ),
-        // ),
+        Opacity(
+          opacity: 0.5,
+          child: Center(
+            child: Image(
+              image: AssetImage('assets/images/reference/Choose pair.png'),
+              fit: BoxFit.fitWidth,
+            ),
+          ),
+        ),
       ],
     );
   }

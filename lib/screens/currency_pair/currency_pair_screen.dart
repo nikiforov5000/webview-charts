@@ -13,8 +13,25 @@ class CurrencyPairScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    CurrencyProvider currencyProvider = Provider.of<CurrencyProvider>(context);
+
+    return Scaffold(
+
+      body: StreamBuilder<CurrencyPair>(
+          stream: currencyProvider.stream,
+          builder: (BuildContext context, snapshot) {
+            return CurrencyPairList();
+          }),
+    );
+  }
+}
+
+class CurrencyPairList extends StatelessWidget {
+  const CurrencyPairList({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double spacer = height / 100;
 
     List<Widget> leftCol = [];
     List<Widget> rightCol = [];
@@ -27,28 +44,33 @@ class CurrencyPairScreen extends StatelessWidget {
         rightCol.add(SelectCurrencyPairButton(currencyPair, currencyProvider));
       }
     }
-    return Scaffold(
-      body: Container(
-        color: kCurrencyPairScreenBackgroundColor,
-        child: Column(
-          children: [
-            SizedBox(height: height / 12,),
-            CurrencyPairScreenTitle(),
-            SizedBox(height: height / 30,),
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: height / 20),
-                child: Row(
-                  children: [
-                    Expanded(child: Column(children: leftCol)),
-                    Expanded(child: Column(children: rightCol)),
-                  ],
-                ),
+
+    return Container(
+      color: kCurrencyPairScreenBackgroundColor,
+      child: Column(
+        children: [
+          SizedBox(
+            height: height / 12,
+          ),
+          CurrencyPairScreenTitle(),
+          SizedBox(
+            height: height / 30,
+          ),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: height / 20),
+              child: Row(
+                children: [
+                  Expanded(child: Column(children: leftCol)),
+                  Expanded(child: Column(children: rightCol)),
+                ],
               ),
             ),
-            SizedBox(height: height / 10,),
-          ],
-        ),
+          ),
+          SizedBox(
+            height: height / 10,
+          ),
+        ],
       ),
     );
   }
@@ -76,7 +98,7 @@ class SelectCurrencyPairButton extends StatelessWidget {
           _currencyProvider.currencyPair = _currencyPair;
         },
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
           decoration: kRoundedConteinerDecoration.copyWith(
             color: color,
           ),
@@ -95,7 +117,9 @@ class SelectCurrencyPairButton extends StatelessWidget {
   }
 
   String _readable(String name) {
-    return name.toUpperCase().substring(0, 3) + ' / ' + name.toUpperCase().substring(3);
+    return name.toUpperCase().substring(0, 3) +
+        ' / ' +
+        name.toUpperCase().substring(3);
   }
 }
 
@@ -115,4 +139,3 @@ class CurrencyPairScreenTitle extends StatelessWidget {
     );
   }
 }
-

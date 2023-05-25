@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:test_job_slavit_ou/data/currency_pair.dart';
 
 class CurrencyProvider extends ChangeNotifier {
-  CurrencyPair? _currencyPair;
+  CurrencyPair? _currencyPair = CurrencyPair.eurUsd;
   final _currencyPairStreamController =
       StreamController<CurrencyPair>.broadcast();
 

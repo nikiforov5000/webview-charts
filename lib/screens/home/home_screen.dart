@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
     balanceProvider.balance = Balance(10000.0);
 
     CurrencyProvider currencyProvider = Provider.of<CurrencyProvider>(context);
-    currencyProvider.currencyPair = CurrencyPair.eurUsd;
+    // currencyProvider.currencyPair = CurrencyPair.eurUsd; // how to set the initial value without reseting to it every time?
 
     ScreenIndexProvider screenIndexProvider =
         Provider.of<ScreenIndexProvider>(context);

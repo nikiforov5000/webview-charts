@@ -22,7 +22,7 @@ class ShowBalance extends StatelessWidget {
           const SizedBox(
             height: 5,
           ),
-          Center(child: CurrentBalance()),
+          Center(child: Balance()),
         ],
       ),
     );

@@ -72,8 +72,8 @@ class _MyAppState extends State<MyApp> {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: HomeScreen.id,
-        // initialRoute: PreloaderScreen.id,
+        // initialRoute: HomeScreen.id,
+        initialRoute: PreloaderScreen.id,
         routes: {
           HomeScreen.id: (context) => HomeScreen(),
           CurrencyPairScreen.id: (context) => CurrencyPairScreen(),

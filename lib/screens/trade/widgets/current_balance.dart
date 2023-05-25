@@ -5,18 +5,18 @@ import 'package:test_job_slavit_ou/constants/text_styles.dart';
 import 'package:test_job_slavit_ou/providers/balance_provieder.dart';
 import 'package:test_job_slavit_ou/models/balance.dart';
 
-class CurrentBalance extends StatelessWidget {
-  CurrentBalance({Key? key}) : super(key: key);
+class Balance extends StatelessWidget {
+  Balance({Key? key}) : super(key: key);
   double balance = 10000;
 
   @override
   Widget build(BuildContext context) {
     final balanceProvider = Provider.of<BalanceProvider>(context);
-    return StreamBuilder<Balance>(
+    return StreamBuilder<double>(
       stream: balanceProvider.stream,
       builder: (context, snapshot) {
         if (snapshot.data != null) {
-          balance = snapshot.data!.balance;
+          balance = snapshot.data!;
         }
         return Text(
           toReadable(balance),

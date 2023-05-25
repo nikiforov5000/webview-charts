@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:test_job_slavit_ou/constants/box_decorations.dart';
+import 'package:test_job_slavit_ou/constants/colors.dart';
+import 'package:test_job_slavit_ou/constants/text_styles.dart';
 import 'package:test_job_slavit_ou/data/balance_provieder.dart';
 
-class BuySellButtons extends StatelessWidget {
-  const BuySellButtons({Key? key}) : super(key: key);
+class BuySellButton extends StatelessWidget {
+  final String label;
+  const BuySellButton(this.label, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     BalanceProvider balanceProvider = Provider.of<BalanceProvider>(context);
-
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        ElevatedButton(
-          onPressed: () {
-            balanceProvider.buySell();
-          },
-          child: Text('Buy Sell'),
-        ),
-        ElevatedButton(
-          onPressed: () {
-            balanceProvider.buySell();
-          },
-          child: Text('Buy Sell'),
-        ),
-      ],
+    final Color color = label == 'Sell' ? kSellButtonColor : kBuyButtonColor;
+    return Container(
+      decoration: kRoundedConteinerDecoration.copyWith(color: color),
+      child: GestureDetector(
+        onTap: () {
+          balanceProvider.buySell();
+        },
+        child: Center(
+            child: Text(
+          label,
+          style: kBigButtonTextStyle,
+        )),
+      ),
     );
   }
 }

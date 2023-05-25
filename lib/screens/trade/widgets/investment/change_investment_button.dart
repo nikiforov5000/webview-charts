@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_job_slavit_ou/data/balance_provieder.dart';
+import 'package:test_job_slavit_ou/screens/trade/widgets/plus_minus_icon.dart';
 
 class ChangeInvestmentButton extends StatelessWidget {
   final String sign;
   final TextEditingController controller;
+
   const ChangeInvestmentButton({
     required this.controller,
     required this.sign,
@@ -28,7 +30,7 @@ class ChangeInvestmentButton extends StatelessWidget {
           balanceProvider.currentInvestment = balanceProvider.investment;
         }
       },
-      child: Icon(sign == '-' ? Icons.remove : Icons.add),
+      child: PlusMinusIcon(sign),
     );
   }
 }

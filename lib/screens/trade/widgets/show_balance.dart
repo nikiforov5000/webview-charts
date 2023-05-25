@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test_job_slavit_ou/constants/box_decorations.dart';
+import 'package:test_job_slavit_ou/constants/text_styles.dart';
 import 'package:test_job_slavit_ou/screens/trade/widgets/current_balance.dart';
 
 class ShowBalance extends StatelessWidget {
@@ -7,11 +9,20 @@ class ShowBalance extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey,
+      decoration: kRoundedConteinerDecoration,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Balance'),
-          CurrentBalance(),
+          const Center(
+            child: Text(
+              'Balance',
+              style: kSmallButtonTextStyle,
+            ),
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          Center(child: CurrentBalance()),
         ],
       ),
     );

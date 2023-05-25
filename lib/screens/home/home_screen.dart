@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     TradeScreen(),
     TopScreen(),
   ];
-  int currentIndex = 1;
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
         //   opacity: 0.5,
         //   child: Center(
         //     child: Image(
-        //       image: AssetImage('assets/images/reference/Top.png'),
+        //       image: AssetImage('assets/images/reference/Trade.png'),
         //       fit: BoxFit.fitWidth,
         //     ),
         //   ),

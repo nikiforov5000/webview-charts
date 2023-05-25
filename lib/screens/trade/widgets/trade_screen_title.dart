@@ -5,6 +5,14 @@ class TradeScreenTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('TradeScreen');
+    return const Text(
+      'Trade',
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+        fontSize: 22,
+      ),
+    );
   }
 }

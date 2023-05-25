@@ -13,7 +13,7 @@ class TopScreen extends StatelessWidget {
     final double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
-        color: kDarkBackgroundColor,
+        color: kTopBackgroundColor,
         child: Column(
           children: [
             SizedBox(height: height / 12.3,),

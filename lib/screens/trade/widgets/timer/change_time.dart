@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_job_slavit_ou/screens/trade/widgets/plus_minus_icon.dart';
 
 class ChangeTime extends StatelessWidget {
   final String sign;
@@ -23,7 +24,7 @@ class ChangeTime extends StatelessWidget {
         }
         formatAfterButtons();
       },
-      child: Icon(sign == '-' ? Icons.remove : Icons.add),
+      child: PlusMinusIcon(sign),
     );
   }
 

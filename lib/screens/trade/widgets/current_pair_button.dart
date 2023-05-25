@@ -3,9 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:test_job_slavit_ou/constants/box_decorations.dart';
 import 'package:test_job_slavit_ou/constants/text_styles.dart';
 import 'package:test_job_slavit_ou/data/currency_pair.dart';
-import 'package:test_job_slavit_ou/data/currency_provider.dart';
+import 'package:test_job_slavit_ou/providers/currency_provider.dart';
 import 'package:test_job_slavit_ou/providers/screen_index_provider.dart';
-import 'package:test_job_slavit_ou/screens/currency_pair/currency_pair_screen.dart';
 
 class CurrencyPairButton extends StatefulWidget {
   const CurrencyPairButton({Key? key}) : super(key: key);

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_job_slavit_ou/constants/box_decorations.dart';
 import 'package:test_job_slavit_ou/constants/text_styles.dart';
-import 'package:test_job_slavit_ou/data/balance_provieder.dart';
+import 'package:test_job_slavit_ou/providers/balance_provieder.dart';
 import 'package:test_job_slavit_ou/screens/trade/widgets/investment/change_investment_button.dart';
 import 'package:test_job_slavit_ou/screens/trade/widgets/investment/investment_text_field.dart';
 

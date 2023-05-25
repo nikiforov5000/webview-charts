@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_job_slavit_ou/data/balance_provieder.dart';
 import 'package:test_job_slavit_ou/data/currency_provider.dart';
+import 'package:test_job_slavit_ou/providers/screen_index_provider.dart';
 import 'package:test_job_slavit_ou/screens/currency_pair/currency_pair_screen.dart';
 import 'package:test_job_slavit_ou/screens/home/home_screen.dart';
 import 'package:test_job_slavit_ou/screens/preloader/preloader_screen.dart';
@@ -67,6 +68,7 @@ class _MyAppState extends State<MyApp> {
       providers: [
         ChangeNotifierProvider(create: (_) => CurrencyProvider()),
         ChangeNotifierProvider(create: (_) => BalanceProvider()),
+        ChangeNotifierProvider(create: (_) => ScreenIndexProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

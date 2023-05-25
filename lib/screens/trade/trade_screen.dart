@@ -17,20 +17,22 @@ class TradeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
-    double spacer = height / 100;
+    double spacer = height / 90;
     double buttonHeight = height / 15;
     return Scaffold(
       body: Container(
         height:  height,
-        padding: EdgeInsets.only(left: 25, right: 25, top: 50, bottom: 10),
+        padding: EdgeInsets.only(left: 30, right: 30, top: 50, bottom: 10),
         color: kTradeBackgroundColor,
         child: Column(
           children: [
             SizedBox(height: spacer,),
+            // SizedBox(height: spacer / 2,),
+            const TradeScreenTitle(),
             SizedBox(height: spacer,),
-            SizedBox(height: buttonHeight,child: const TradeScreenTitle()),
             SizedBox(height: spacer,),
             SizedBox(height: buttonHeight,child: ShowBalance()),
+            SizedBox(height: spacer,),
             SizedBox(height: spacer,),
             SizedBox(height: spacer,),
             Expanded(child: Chart()),

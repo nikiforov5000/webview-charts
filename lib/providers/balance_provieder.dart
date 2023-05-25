@@ -33,13 +33,14 @@ class BalanceProvider extends ChangeNotifier {
     _balanceStreamController.add(newBalance);
   }
 
-  void buySell() {
+  bool buySell() {
     if (_investment > _balance) {
-      return;
+      return false;
     }
     substractFromBalance();
     // await waitFewSec();
     maybeReturnWithGain();
+    return true;
   }
 
   substractFromBalance() {

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_job_slavit_ou/common_widgets/nav_bar.dart';
-import 'package:test_job_slavit_ou/models/balance.dart';
-import 'package:test_job_slavit_ou/providers/balance_provieder.dart';
 import 'package:test_job_slavit_ou/providers/screen_index_provider.dart';
 import 'package:test_job_slavit_ou/screens/currency_pair/currency_pair_screen.dart';
 import 'package:test_job_slavit_ou/screens/top/top_screen.dart';
@@ -26,8 +24,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    BalanceProvider balanceProvider = Provider.of<BalanceProvider>(context);
-
     ScreenIndexProvider screenIndexProvider =
         Provider.of<ScreenIndexProvider>(context);
 

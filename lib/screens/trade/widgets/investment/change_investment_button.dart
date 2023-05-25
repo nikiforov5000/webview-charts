@@ -19,16 +19,14 @@ class ChangeInvestmentButton extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         double currentInvestment = balanceProvider.investment;
-        if (currentInvestment >= 100 &&
-            currentInvestment + 100 <= balanceProvider.balance) {
-          if (sign == '-') {
+        if (sign == '-' && currentInvestment >= 100) {
             balanceProvider.investment -= 100;
-          } else {
-            balanceProvider.investment += 100;
-          }
-          controller.text = balanceProvider.investment.toStringAsFixed(0);
-          balanceProvider.currentInvestment = balanceProvider.investment;
         }
+        if (sign == '+' && currentInvestment + 100 <= balanceProvider.balance) {
+            balanceProvider.investment += 100;
+        }
+        controller.text = balanceProvider.investment.toStringAsFixed(0);
+        balanceProvider.currentInvestment = balanceProvider.investment;
       },
       child: PlusMinusIcon(sign),
     );

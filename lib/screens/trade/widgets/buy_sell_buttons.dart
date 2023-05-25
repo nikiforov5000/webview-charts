@@ -19,8 +19,9 @@ class BuySellButton extends StatelessWidget {
       decoration: kRoundedConteinerDecoration.copyWith(color: color),
       child: GestureDetector(
         onTap: () {
-          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-          balanceProvider.buySell();
+          if (balanceProvider.buySell()) {
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          }
         },
         child: Center(
           child: Text(

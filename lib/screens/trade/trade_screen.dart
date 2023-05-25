@@ -11,7 +11,6 @@ import 'package:test_job_slavit_ou/screens/trade/widgets/trade_screen_title.dart
 class TradeScreen extends StatelessWidget {
   static const String id = 'TradeScreen';
 
-
   TradeScreen({Key? key}) : super(key: key);
 
   @override

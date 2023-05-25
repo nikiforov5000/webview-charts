@@ -11,11 +11,8 @@ class CurrencyPairButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('currency_pair_button.dart -> build()');
     final currencyProvider = Provider.of<CurrencyProvider>(context);
     final screenIndexProvider = Provider.of<ScreenIndexProvider>(context);
-
-    print('currency_pair_button.dart -> currencyProvider.currencyPair:${currencyProvider.currencyPair}');
 
     return GestureDetector(
       onTap: () {
@@ -24,13 +21,12 @@ class CurrencyPairButton extends StatelessWidget {
       child: StreamBuilder<CurrencyPair>(
         stream: currencyProvider.stream,
         builder: (BuildContext context, snapshot) {
-          print('currency_pair_button.dart -> snapshot.data:${snapshot.data.toString()}');
           return Container(
             decoration: kRoundedConteinerDecoration,
             child: Center(
               child: Text(
                 /// TODO services/readable currency pair
-                currencyProvider.currencyPair.name,
+                currencyProvider.currencyPair.toString(),
                 style: kBigButtonTextStyle,
               ),
             ),

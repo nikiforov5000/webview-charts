@@ -6,7 +6,6 @@ import 'package:test_job_slavit_ou/data/currency_pair.dart';
 class CurrencyProvider extends ChangeNotifier {
   CurrencyPair _currencyPair = CurrencyPair.eurUsd;
   CurrencyProvider() {
-    print('CurrencyProvider() -> constructor');
     _currencyPairStreamController.add(CurrencyPair.eurUsd);
     _currencyPair = CurrencyPair.eurUsd;
   }

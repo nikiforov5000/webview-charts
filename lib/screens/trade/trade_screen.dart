@@ -35,7 +35,7 @@ class TradeScreen extends StatelessWidget {
             SizedBox(height: spacer,),
             SizedBox(height: spacer,),
             SizedBox(height: spacer,),
-            Expanded(child: Chart()),
+            // Expanded(child: Chart()),
             SizedBox(height: spacer,),
             SizedBox(height: spacer,),
             SizedBox(height: buttonHeight,child: const CurrencyPairButton()),

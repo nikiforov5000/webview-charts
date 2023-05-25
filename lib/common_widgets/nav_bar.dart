@@ -1,7 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:test_job_slavit_ou/common_widgets/nav_bar_icons.dart';
 import 'package:test_job_slavit_ou/constants/colors.dart';
 import 'package:test_job_slavit_ou/constants/text_styles.dart';
+import 'package:test_job_slavit_ou/providers/screen_index_provider.dart';
 
 class NavBar extends StatefulWidget {
   int currentIndex;
@@ -14,6 +18,7 @@ class NavBar extends StatefulWidget {
 class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
+    final screenIndexProvider = Provider.of<ScreenIndexProvider>(context);
     return Container(
       height: 90,
       color: kNavBarBackgroundColor,
@@ -27,8 +32,10 @@ class _NavBarState extends State<NavBar> {
         unselectedLabelStyle: kNavBarLabelTextStyle,
         unselectedItemColor: Colors.grey,
         type: BottomNavigationBarType.fixed,
-        currentIndex: widget.currentIndex,
-        onTap: (index) => setState(() => widget.currentIndex = index),
+        currentIndex: screenIndexProvider.currentIndex > 1
+            ? 0
+            : screenIndexProvider.currentIndex,
+        onTap: (index) => setState(() => screenIndexProvider.index = index),
         items: NavBarIcons.getIcons(),
       ),
     );

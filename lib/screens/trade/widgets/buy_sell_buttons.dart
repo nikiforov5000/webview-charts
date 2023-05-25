@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:test_job_slavit_ou/constants/box_decorations.dart';
 import 'package:test_job_slavit_ou/constants/colors.dart';
 import 'package:test_job_slavit_ou/constants/text_styles.dart';
-import 'package:test_job_slavit_ou/data/balance_provieder.dart';
+import 'package:test_job_slavit_ou/providers/balance_provieder.dart';
 
 class BuySellButton extends StatelessWidget {
   final String label;

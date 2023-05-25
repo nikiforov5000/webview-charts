@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_job_slavit_ou/data/balance_provieder.dart';
+import 'package:test_job_slavit_ou/providers/balance_provieder.dart';
 import 'package:test_job_slavit_ou/screens/trade/widgets/plus_minus_icon.dart';
 
 class ChangeInvestmentButton extends StatelessWidget {

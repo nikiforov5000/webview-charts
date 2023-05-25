@@ -20,3 +20,5 @@ const kBuyButtonColor = kGreenColor;
 
 const kLightGreyTextColor = Color(0xffC8C8C8);
 
+const kCurrencyPairScreenBackgroundColor = Color(0xff121629);
+
